@@ -1,0 +1,9 @@
+﻿@using DependencyInjection.Services.ServiceScope;
+@inject TransientService TransientService
+@inject SingletonService SingletonService
+@inject ScopedService ScopedService
+
+<h3>ExampleComponent1</h3>
+<p>Transient service data: @TransientService.ExampleId</p>
+<p>Singleton service data: @SingletonService.ExampleId</p>
+<p>Scoped service data: @ScopedService.ExampleId</p>

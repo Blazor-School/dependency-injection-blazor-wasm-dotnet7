@@ -1,0 +1,10 @@
+﻿@page "/auto-registering-service"
+@using DependencyInjection.Services.AutoRegisteredServices;
+@inject AutoScopedService MyScopedService
+@inject AutoTransientService MyTransientService
+@inject AutoSingletonService MySingletonService
+
+<h3>Auto Registering Service</h3>
+<p>Transient service data: @MyTransientService.ExampleId</p>
+<p>Singleton service data: @MySingletonService.ExampleId</p>
+<p>Scoped service data: @MyScopedService.ExampleId</p>
