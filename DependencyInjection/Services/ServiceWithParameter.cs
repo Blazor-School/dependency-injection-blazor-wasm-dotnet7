@@ -1,10 +1,10 @@
 ﻿namespace DependencyInjection.Services;
 
-public class ServiceWithCustomData
+public class ServiceWithParameter
 {
     public string ExampleString { get; set; } = "";
 
-    public ServiceWithCustomData(string exampleString)
+    public ServiceWithParameter(string exampleString)
     {
         ExampleString = exampleString;
     }

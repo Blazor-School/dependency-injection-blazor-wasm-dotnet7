@@ -14,8 +14,8 @@ builder.Services.AddSingleton<SingletonService>();
 builder.Services.AddScoped<ScopedService>();
 builder.Services.AddTransient<TransientService>();
 builder.Services.AddTransient<IServiceInterface, ServiceWithInterface>();
-builder.Services.AddTransient<ServiceWithCustomData>(serviceProvider => new("Blazor School"));
-builder.Services.AddTransient<DependentService>(serviceProvider => new(serviceProvider.GetRequiredService<ServiceWithCustomData>()));
+builder.Services.AddTransient<ServiceWithParameter>(serviceProvider => new("Blazor School"));
+builder.Services.AddTransient<DependentService>(serviceProvider => new(serviceProvider.GetRequiredService<ServiceWithParameter>()));
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 ScanAndRegisterServices(builder.Services);

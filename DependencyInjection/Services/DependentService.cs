@@ -2,9 +2,9 @@
 
 public class DependentService
 {
-    public ServiceWithCustomData ServiceWithCustomData { get; set; }
+    public ServiceWithParameter ServiceWithCustomData { get; set; }
 
-    public DependentService(ServiceWithCustomData serviceWithCustomData)
+    public DependentService(ServiceWithParameter serviceWithCustomData)
     {
         ServiceWithCustomData = serviceWithCustomData;
     }
