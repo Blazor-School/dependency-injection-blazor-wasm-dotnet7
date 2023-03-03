@@ -2,10 +2,10 @@
 
 public class DependentService
 {
-    public ServiceWithParameter ServiceWithCustomData { get; set; }
+    public ServiceWithParameter UpstreamService { get; set; }
 
-    public DependentService(ServiceWithParameter serviceWithCustomData)
+    public DependentService(ServiceWithParameter upstreamService)
     {
-        ServiceWithCustomData = serviceWithCustomData;
+        UpstreamService = upstreamService;
     }
 }
