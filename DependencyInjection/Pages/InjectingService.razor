@@ -4,7 +4,9 @@
 @inject IServiceInterface ServiceWithInterface
 @*@inject ServiceWithInterface ServiceWithInterface2 If this line is enabled, there will be an error because this service uses IServiceInterface*@
 @inject DependentService DependentService
+@inject DependentServiceWithParameter DependentServiceWithParameter
 
 <h3>InjectingService</h3>
 <p>Service with interface: @ServiceWithInterface.ExampleString</p>
 <p>Dependent service: @DependentService.UpstreamService.ExampleString</p>
+<p>Dependent service with parameter: @DependentServiceWithParameter.UpstreamService.ExampleString</p>

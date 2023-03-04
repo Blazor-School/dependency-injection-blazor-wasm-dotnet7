@@ -5,6 +5,7 @@ using DependencyInjection.Services.ServiceScope;
 using DependencyInjection.Services.ServiceWithInterface;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -15,7 +16,8 @@ builder.Services.AddScoped<ScopedService>();
 builder.Services.AddTransient<TransientService>();
 builder.Services.AddTransient<IServiceInterface, ServiceWithInterface>();
 builder.Services.AddTransient<ServiceWithParameter>(serviceProvider => new("Blazor School"));
-builder.Services.AddTransient<DependentService>(serviceProvider => new(serviceProvider.GetRequiredService<ServiceWithParameter>()));
+builder.Services.AddTransient<DependentService>();
+builder.Services.AddTransient<DependentServiceWithParameter>(serviceProvider=> new("Blazor School", serviceProvider.GetRequiredService<ServiceWithParameter>()));
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 ScanAndRegisterServices(builder.Services);
